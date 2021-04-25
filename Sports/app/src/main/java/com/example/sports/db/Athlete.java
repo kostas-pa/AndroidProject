@@ -21,6 +21,7 @@ import androidx.room.PrimaryKey;
         private String city;
         @ColumnInfo(name = "Country")
         private String country;
+        @ColumnInfo(name = "BirthYear")
         private int BirthYear;
         private int Sid;
 
