@@ -27,15 +27,15 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     private AppBarConfiguration mAppBarConfiguration;
     public static FragmentManager fragmentManager;
-
-    public static FragmentManager fragmentManager;
     public static RDatabase rDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        rDatabase = Room.databaseBuilder(getApplicationContext(), RDatabase.class, "roomDB").allowMainThreadQueries().build();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        fragmentManager = getSupportFragmentManager();
+        rDatabase = Room.databaseBuilder(getApplicationContext(), RDatabase.class, "roomDB").allowMainThreadQueries().build();
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         FloatingActionButton fab = findViewById(R.id.fab);

@@ -13,20 +13,20 @@ import java.util.List;
 public interface SportsDao {
 
     @Query("SELECT * FROM Sports")
-    List<Sports> getAllSports();
+    public List<Sports> getAllSports();
 
-    @Query("SELECT * FROM Sports WHERE getName() like :sName")
-    List<Sports> searchSportByName(String sName);
+    @Query("SELECT * FROM Sports WHERE Name like :sName")
+    public List<Sports> searchSportByName(String sName);
 
-    @Query("SELECT * FROM Sports WHERE getType() = :sType")
-    List<Sports> searchSportByType(String sType);
+    @Query("SELECT * FROM Sports WHERE Type = :sType")
+    public List<Sports> searchSportByType(String sType);
 
     @Update
-    void updateSport(Sports... sport);
+    void updateSport(Sports sport);
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insertSport(Sports... sport);
+    void insertSport(Sports sport);
 
     @Delete
-    void delete(Sports... sport);
+    void delete(Sports sport);
 }

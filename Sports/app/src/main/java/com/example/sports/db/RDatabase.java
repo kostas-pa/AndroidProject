@@ -6,7 +6,7 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-@Database(entities = {Sports.class}, version = 1)
+@Database(entities = {Sports.class, Team.class, Athlete.class}, version = 1, exportSchema = false)
 public abstract class RDatabase extends RoomDatabase {
     public abstract SportsDao sportsDao();
     public abstract TeamDao teamDao();

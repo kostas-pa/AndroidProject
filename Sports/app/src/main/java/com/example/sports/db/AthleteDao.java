@@ -15,19 +15,19 @@ public interface AthleteDao {
     @Query("SELECT * FROM Athlete")
     List<Athlete> getAllAthletes();
 
-    @Query("SELECT * FROM Athlete WHERE getFirstName() = :fName")
+    @Query("SELECT * FROM Athlete WHERE First_Name = :fName")
     List<Athlete> searchAthleteByFirstName(String fName);
 
-    @Query("SELECT * FROM Athlete WHERE getLastName() = :lName")
+    @Query("SELECT * FROM Athlete WHERE Last_Name = :lName")
     List<Athlete> searchAthleteByLastName(String lName);
 
-    @Query("SELECT * FROM Athlete WHERE getCity() like :aCity")
+    @Query("SELECT * FROM Athlete WHERE City like :aCity")
     List<Athlete> searchAthleteByCity(String aCity);
 
-    @Query("SELECT * FROM Athlete WHERE getCountry() like :aCountry")
+    @Query("SELECT * FROM Athlete WHERE Country like :aCountry")
     List<Athlete> searchAthleteByCountry(String aCountry);
 
-    @Query("SELECT * FROM Athlete WHERE getBirthYear() = :aBirthYear")
+    @Query("SELECT * FROM Athlete WHERE BirthYear = :aBirthYear")
     List<Athlete> searchAthleteByBirthYear(String aBirthYear);
 
     @Update

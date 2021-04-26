@@ -7,11 +7,7 @@ import androidx.room.PrimaryKey;
 
 
     @Entity(foreignKeys = {
-            @ForeignKey(entity = Sports.class, parentColumns = "sid", childColumns = "Sid",
-                    onDelete = ForeignKey.CASCADE),
-            @ForeignKey(entity = Athlete.class, parentColumns = "city", childColumns = "City",
-                    onDelete = ForeignKey.CASCADE),
-            @ForeignKey(entity = Athlete.class, parentColumns = "country", childColumns = "Country",
+            @ForeignKey(entity = Sports.class, parentColumns = "ID", childColumns = "ID",
                     onDelete = ForeignKey.CASCADE)})
     public class Team {
 
@@ -20,12 +16,12 @@ import androidx.room.PrimaryKey;
         private int tid;
         @ColumnInfo(name = "Name")
         private String name;
-        @ColumnInfo(name = "Stadium Name")
+        @ColumnInfo(name = "Stadium_Name")
         private String stadiumName;
         private String City;
         private String Country;
         private int Sid;
-        @ColumnInfo(name = "Creation Year")
+        @ColumnInfo(name = "Creation_Year")
         private int creationYear;
 
 

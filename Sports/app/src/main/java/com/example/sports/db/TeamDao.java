@@ -14,19 +14,19 @@ public interface TeamDao {
     @Query("SELECT * FROM Team")
     List<Team> getAllTeams();
 
-    @Query("SELECT * FROM Team WHERE getName() = :tName")
+    @Query("SELECT * FROM Team WHERE Name = :tName")
     List<Team> searchTeamByName(String tName);
 
-    @Query("SELECT * FROM Team WHERE getStadiumName() = :tStadiumName")
+    @Query("SELECT * FROM Team WHERE Stadium_Name = :tStadiumName")
     List<Team> searchTeamByStadiumName(String tStadiumName);
 
-    @Query("SELECT * FROM Team WHERE getCity() = :tCity")
+    @Query("SELECT * FROM Team WHERE City = :tCity")
     List<Team> searchTeamByCity(String tCity);
 
-    @Query("SELECT * FROM Team WHERE getCountry() = :tCountry")
+    @Query("SELECT * FROM Team WHERE Country = :tCountry")
     List<Team> searchTeamByCountry(String tCountry);
 
-    @Query("SELECT * FROM Team WHERE getCreationYear() = :tCreationYear")
+    @Query("SELECT * FROM Team WHERE Creation_Year = :tCreationYear")
     List<Team> searchTeamByCreationYear(String tCreationYear);
 
     @Update
