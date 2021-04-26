@@ -25,16 +25,6 @@ import androidx.room.PrimaryKey;
         private int BirthYear;
         private int Sid;
 
-        public Athlete(int aid, String firstName, String lastName, String city, String country, int sid,
-                       int BirthYear) {
-            this.aid = aid;
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.city = city;
-            this.country = country;
-            this.BirthYear = BirthYear;
-            Sid = sid;
-        }
 
         public int getAid() {
             return aid;

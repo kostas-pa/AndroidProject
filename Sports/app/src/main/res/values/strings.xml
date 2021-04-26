@@ -20,18 +20,14 @@
     <string name="athlete">Athlete</string>
     <string name="select">Επέλεξε κατηγορία</string>
     <string name="textview">TextView</string>
-    <string name="button">Button</string>
     <string name="sport">sport</string>
     <string name="insert_team">Insert Team</string>
     <string name="insert1">INSERT</string>
     <string name="insert_athlete">Insert Athlete</string>
     <string name="first_name">First Name</string>
     <string name="last_name">Last Name</string>
-    <string name="city">City</string>
-    <string name="country">Country</string>
     <string name="birthyear">Birthyear</string>
     <string name="insert2">INSERT</string>
-    <string name="name">Name</string>
     <string name="stadium_name">Stadium Name</string>
     <string name="city">City</string>
     <string name="country">Country</string>
@@ -40,12 +36,9 @@
     <string name="button">Button</string>
     <string name="insert3">INSERT</string>
     <string name="name">Name</string>
-    <string name="team">Team</string>
     <string name="individual">Individual</string>
     <string name="delete_sport">Delete Sport</string>
-    <string name="delete">DELETE</string>
     <string name="delete_athlete">Delete Athlete</string>
-    <string name="delete">DELETE</string>
     <string name="delete_team">Delete Team</string>
     <string name="delete">DELETE</string>
 

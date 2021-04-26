@@ -28,15 +28,6 @@ import androidx.room.PrimaryKey;
         @ColumnInfo(name = "Creation Year")
         private int creationYear;
 
-        public Team(int tid, String name, String stadiumName, String city, String country, int sid, int creationYear) {
-            this.tid = tid;
-            this.name = name;
-            this.stadiumName = stadiumName;
-            City = city;
-            Country = country;
-            Sid = sid;
-            this.creationYear = creationYear;
-        }
 
 
         public int getTid() {

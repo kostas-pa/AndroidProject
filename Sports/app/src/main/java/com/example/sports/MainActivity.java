@@ -26,6 +26,7 @@ import androidx.room.Room;
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private AppBarConfiguration mAppBarConfiguration;
+    public static FragmentManager fragmentManager;
 
     public static FragmentManager fragmentManager;
     public static RDatabase rDatabase;
@@ -56,8 +57,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
-
-
     }
 
     @Override

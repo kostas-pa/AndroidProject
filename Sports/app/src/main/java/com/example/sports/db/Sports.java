@@ -4,7 +4,7 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity
+@Entity (tableName = "sports")
 public class Sports {
 
     @PrimaryKey(autoGenerate = true)
@@ -15,11 +15,6 @@ public class Sports {
     @ColumnInfo(name = "Type")
     private String type;
 
-    public Sports(int sid, String name, String type) {
-        this.sid = sid;
-        this.name = name;
-        this.type = type;
-    }
 
     public int getSid() {
         return sid;
