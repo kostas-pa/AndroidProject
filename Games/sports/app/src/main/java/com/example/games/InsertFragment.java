@@ -14,7 +14,6 @@ import androidx.lifecycle.ViewModelProvider;
 
 public class InsertFragment extends Fragment implements View.OnClickListener {
     Button Bn_ins_team, Bn_ins_athlete, Bn_ins_sport, Bn_ins_game;
-    private InsertViewModel galleryViewModel;
 
     public InsertFragment() {
 
@@ -25,8 +24,6 @@ public class InsertFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-        galleryViewModel =
-                new ViewModelProvider(this).get(InsertViewModel.class);
         View view = inflater.inflate(R.layout.fragment_insert, container, false);
         Bn_ins_team = view.findViewById(R.id.buttonAthlete);
         Bn_ins_team.setOnClickListener(this);

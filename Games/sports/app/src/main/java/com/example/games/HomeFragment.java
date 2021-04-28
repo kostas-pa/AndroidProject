@@ -16,22 +16,14 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.games.R;
 
 public class HomeFragment extends Fragment {
-    private HomeViewModel homeViewModel;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-            homeViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
             View root = inflater.inflate(R.layout.fragment_home, container, false);
 
-            homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-                @Override
-                public void onChanged(@Nullable String s) {
-
-                }
-            });
             return root;
     }
 }
