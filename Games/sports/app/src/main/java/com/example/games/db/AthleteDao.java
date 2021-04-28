@@ -31,11 +31,11 @@ public interface AthleteDao {
     List<Athlete> searchAthleteByBirthYear(String aBirthYear);
 
     @Update
-    void updateAthlete(Athlete... athlete);
+    void updateAthlete(Athlete athlete);
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insertAthlete(Athlete... athlete);
+    void insertAthlete(Athlete athlete);
 
     @Delete
-    void delete(Athlete... athlete);
+    void delete(Athlete athlete);
 }
