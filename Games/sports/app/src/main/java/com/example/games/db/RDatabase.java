@@ -1,10 +1,10 @@
 package com.example.games.db;
 
-import android.content.Context;
-
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
+
+import com.example.games.InsertSport;
 
 @Database(entities = {Sports.class, Team.class, Athlete.class}, version = 1, exportSchema = false)
 public abstract class RDatabase extends RoomDatabase {
@@ -14,11 +14,11 @@ public abstract class RDatabase extends RoomDatabase {
 
     private static RDatabase INSTANCE;
 
-    public static RDatabase getDBInstance(Context context) {
+    public static RDatabase getDBInstance(InsertSport context) {
 
         if (INSTANCE == null) {
             INSTANCE =  Room.databaseBuilder(context.getApplicationContext(), RDatabase.class,
-                    "Sports").allowMainThreadQueries()
+                    "rDatabase").allowMainThreadQueries()
                     .build();
         }
         return INSTANCE;

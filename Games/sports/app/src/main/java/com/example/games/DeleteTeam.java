@@ -26,8 +26,8 @@ public class DeleteTeam extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_delete_team, container, false);
-        editText = view.findViewById(R.id.tableLayout);
-        button = view.findViewById(R.id.button);
+        editText = view.findViewById(R.id.tableLayout4);
+        button = view.findViewById(R.id.buttondt);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

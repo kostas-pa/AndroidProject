@@ -21,7 +21,7 @@
         tools:textSize="24sp" />
 
     <TableLayout
-        android:id="@+id/tableLayout"
+        android:id="@+id/tableLayout2"
         android:layout_width="352dp"
         android:layout_height="536dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -54,7 +54,7 @@
         android:layout_height="wrap_content"
         android:text="DELETE"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/tableLayout"
+        app:layout_constraintEnd_toEndOf="@+id/tableLayout2"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.95"
         tools:layout_width="150dp" />

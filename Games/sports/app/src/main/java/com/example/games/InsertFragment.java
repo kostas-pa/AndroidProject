@@ -40,16 +40,16 @@ public class InsertFragment extends Fragment implements View.OnClickListener {
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.buttonGame:
-                    MainActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container, new InsertGame()).addToBackStack(null).commit();
+                    MainActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container, new InsertGame()).commit();
                     break;
                 case R.id.buttonTeam:
-                    MainActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container, new InsertSport()).addToBackStack(null).commit();
+                    MainActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container, new InsertSport()).commit();
                     break;
                 case R.id.buttonAthlete:
-                    MainActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container, new InsertTeam()).addToBackStack(null).commit();
+                    MainActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container, new InsertTeam()).commit();
                     break;
                 case R.id.buttonSport:
-                    MainActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container, new InsertAthlete()).addToBackStack(null).commit();
+                    MainActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container, new InsertAthlete()).commit();
                     break;
             }
         }

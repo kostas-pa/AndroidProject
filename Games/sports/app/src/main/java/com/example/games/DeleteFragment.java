@@ -38,16 +38,16 @@ public class DeleteFragment extends Fragment implements View.OnClickListener{
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.buttonGame:
-                MainActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container, new DeleteGame()).addToBackStack(null).commit();
+                MainActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container, new DeleteGame()).commit();
                 break;
             case R.id.buttonTeam:
-                MainActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container, new DeleteSport()).addToBackStack(null).commit();
+                MainActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container, new DeleteSport()).commit();
                 break;
             case R.id.buttonSport:
-                MainActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container, new DeleteAthlete()).addToBackStack(null).commit();
+                MainActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container, new DeleteAthlete()).commit();
                 break;
             case R.id.buttonAthlete:
-                MainActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container, new DeleteTeam()).addToBackStack(null).commit();
+                MainActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container, new DeleteTeam()).commit();
                 break;
         }
     }

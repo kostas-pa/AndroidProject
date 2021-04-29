@@ -16,6 +16,16 @@ public class Sports {
     private String type;
 
 
+    public Sports() {
+
+    }
+
+    public Sports (int sid, String name, String type) {
+        this.sid = sid;
+        this.name = name;
+        this.type = type;
+    }
+
     public int getSid() {
         return sid;
     }
