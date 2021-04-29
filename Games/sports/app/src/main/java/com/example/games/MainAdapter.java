@@ -24,6 +24,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
     private List<Sports> sportsList;
     private Activity context;
     private RDatabase database;
+    InsertSport insertSport;
 
 
     public MainAdapter(Activity context, List<Sports> sportsList) {
@@ -45,7 +46,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
         Sports sports = sportsList.get(position);
-        database = RDatabase.getDBInstance(context);
+        database = RDatabase.getDBInstance(insertSport);
         holder.textView.setText(sports.getName());
         holder.textView.setText(sports.getType());
         holder.btedit.setOnClickListener(new View.OnClickListener() {

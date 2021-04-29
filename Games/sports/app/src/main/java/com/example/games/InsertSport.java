@@ -1,5 +1,6 @@
 package com.example.games;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -54,9 +55,9 @@ public class InsertSport extends Fragment {
         rDatabase = RDatabase.getDBInstance(this);
         sportsList = rDatabase.sportsDao().getAllSports();
 
-        linearLayoutManager = new LinearLayoutManager(this);
+        linearLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(linearLayoutManager);
-        adapter = new MainAdapter(MainActivity.this, sportsList);
+        adapter = new MainAdapter((Activity) getContext(), sportsList);
         recyclerView.setAdapter(adapter);
         btadd.setOnClickListener(new View.OnClickListener() {
             @Override
