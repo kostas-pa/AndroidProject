@@ -87,6 +87,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_delete:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new DeleteFragment()).commit();
                 break;
+            case R.id.nav_man_game:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ManageGame()).commit();
+                break;
         }
 
         drawer.closeDrawer(GravityCompat.START);

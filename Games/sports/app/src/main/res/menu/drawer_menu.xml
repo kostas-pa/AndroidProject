@@ -18,4 +18,12 @@
             android:title="Delete" />
     </group>
 
+    <item android:title="Manage">
+        <menu>
+            <item android:id="@+id/nav_man_game"
+                android:icon="@drawable/ic_baseline_home_24"
+                android:title="Manage Game" />
+        </menu>
+    </item>
+
 </menu>

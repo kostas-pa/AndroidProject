@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "491232021736",
+    "firebase_url": "https://androidproject-265e8-default-rtdb.firebaseio.com",
+    "project_id": "androidproject-265e8",
+    "storage_bucket": "androidproject-265e8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:491232021736:android:ebadd212c1ab47555b4d5d",
+        "android_client_info": {
+          "package_name": "com.example.games"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "491232021736-ue1l0ta2pmmfj1s3p00nlq1libv5q54g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1qV6uNzq2ZRCXdMpW1iTfETvYa5APAOA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "491232021736-ue1l0ta2pmmfj1s3p00nlq1libv5q54g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:491232021736:android:015709e6cfe83b1f5b4d5d",
+        "android_client_info": {
+          "package_name": "com.example.sports"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "491232021736-ue1l0ta2pmmfj1s3p00nlq1libv5q54g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1qV6uNzq2ZRCXdMpW1iTfETvYa5APAOA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "491232021736-ue1l0ta2pmmfj1s3p00nlq1libv5q54g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
