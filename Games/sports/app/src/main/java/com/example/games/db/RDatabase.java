@@ -1,6 +1,7 @@
 package com.example.games.db;
 
 import android.app.Activity;
+import android.content.Context;
 
 import androidx.room.Database;
 import androidx.room.Room;
@@ -17,15 +18,14 @@ public abstract class RDatabase extends RoomDatabase {
     public abstract TeamDao teamDao();
     public abstract AthleteDao athleteDao();
 
-    private static RDatabase INSTANCE;
+    private static RDatabase database;
+    private static String DATABASE_NAME = "database";
 
-    public static RDatabase getDBInstance(InsertSport context) {
-
-        if (INSTANCE == null) {
-            INSTANCE =  Room.databaseBuilder(Objects.requireNonNull(Objects.requireNonNull(context).getContext()).getApplicationContext(), RDatabase.class,
-                    "rDatabase").allowMainThreadQueries()
-                    .build();
+    public synchronized static RDatabase getInstance(Context context) {
+        if (database == null) {
+            database = Room.databaseBuilder(context.getApplicationContext(), RDatabase.class, DATABASE_NAME)
+                    .allowMainThreadQueries().fallbackToDestructiveMigration().build();
         }
-        return INSTANCE;
+        return database;
     }
 }

@@ -17,6 +17,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.games.db.RDatabase;
 import com.example.games.db.Sports;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.List;
 
 public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
@@ -24,7 +26,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
     private List<Sports> sportsList;
     private Activity context;
     private RDatabase database;
-    InsertSport insertSport;
+    InsertSport insertSport = new InsertSport();
 
 
     public MainAdapter(Activity context, List<Sports> sportsList) {
@@ -46,9 +48,9 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
         Sports sports = sportsList.get(position);
-        database = RDatabase.getDBInstance(insertSport);
+        database = RDatabase.getInstance(context);
         holder.textView.setText(sports.getName());
-        holder.textView.setText(sports.getType());
+        holder.textView.append("," + sports.getType());
         holder.btedit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,13 +70,16 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
                 Button btupdate = dialog.findViewById(R.id.bt_update);
 
                 editText.setText(sName);
+                editText.append("," + sType);
 
                 btupdate.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         dialog.dismiss();
-                        String uName = editText.getText().toString().trim();
-                        Sports sports1 = new Sports(sID, uName, sType);
+                        String[] words = editText.getText().toString().trim().split(",");
+                        String uName = words[0];
+                        String uType = words[1];
+                        Sports sports1 = new Sports(sID, uName, uType);
                         database.sportsDao().updateSport(sports1);
                         sportsList.clear();
                         sportsList.addAll(database.sportsDao().getAllSports());
