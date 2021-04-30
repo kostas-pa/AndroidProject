@@ -30,13 +30,13 @@
             android:id="@+id/radioButton2"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="Ατομικό" />
+            android:text="Individual" />
 
         <RadioButton
             android:id="@+id/radioButton"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="Ομαδικό" />
+            android:text="Team" />
     </RadioGroup>
 
     <LinearLayout
