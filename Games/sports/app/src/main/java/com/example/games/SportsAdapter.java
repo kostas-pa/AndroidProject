@@ -16,24 +16,24 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.games.db.RDatabase;
 import com.example.games.db.Sports;
+import com.example.games.db.Team;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
 import java.util.List;
 
-public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
+public class SportsAdapter extends RecyclerView.Adapter<SportsAdapter.ViewHolder> {
 
     private List<Sports> sportsList;
     private Activity context;
     private RDatabase database;
-    InsertSport insertSport = new InsertSport();
 
 
-    public MainAdapter(Activity context, List<Sports> sportsList) {
+    public SportsAdapter(Activity context, List<Sports> sportsList) {
         this.context = context;
         this.sportsList = sportsList;
         notifyDataSetChanged();
     }
+
+
 
     @NonNull
     @Override
@@ -108,7 +108,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
         return sportsList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView textView;
         ImageView btedit, btdelete;

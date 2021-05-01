@@ -5,11 +5,15 @@ import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
+import java.io.Serializable;
 
-@Entity(foreignKeys = {
+import static androidx.room.ForeignKey.CASCADE;
+
+
+@Entity(tableName = "Team", foreignKeys = {
         @ForeignKey(entity = Sports.class, parentColumns = "ID", childColumns = "ID",
-                onDelete = ForeignKey.CASCADE)})
-public class Team {
+                onDelete = CASCADE)})
+public class Team  implements Serializable {
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "ID")
@@ -25,6 +29,19 @@ public class Team {
     private int creationYear;
 
 
+    public Team() {
+
+    }
+
+    public Team(int Sid, int tid, String name, String stadiumName, String City, String Country, int creationYear) {
+        this.Sid = Sid;
+        this.tid = tid;
+        this.name = name;
+        this.stadiumName = stadiumName;
+        this.City = City;
+        this.Country = Country;
+        this.creationYear = creationYear;
+    }
 
     public int getTid() {
         return tid;

@@ -28,7 +28,7 @@ public class InsertSport extends Fragment {
     RecyclerView recyclerView;
     List<Sports> sportsList = new ArrayList<>();
     LinearLayoutManager linearLayoutManager;
-    MainAdapter adapter;
+    SportsAdapter adapter;
     RDatabase rDatabase;
     RadioGroup rg;
     RadioButton rb;
@@ -52,7 +52,7 @@ public class InsertSport extends Fragment {
 
         linearLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(linearLayoutManager);
-        adapter = new MainAdapter((Activity) getContext(), sportsList);
+        adapter = new SportsAdapter((Activity) getContext(), sportsList);
         recyclerView.setAdapter(adapter);
         btadd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,48 +64,19 @@ public class InsertSport extends Fragment {
                 rb = (RadioButton) rg.getChildAt(idx);
                 String uType = rb.getText().toString();
 
-                if (!uName.equals("")) {
-                    Sports sports = new Sports();
-                    sports.setName(uName);
-                    sports.setType(uType);
-                    rDatabase.sportsDao().insertSport(sports);
-                    sportsList.clear();
-                    sportsList.addAll(rDatabase.sportsDao().getAllSports());
-                    adapter.notifyDataSetChanged();
-                }
+                    if (!uName.equals("")) {
+                        Sports sports = new Sports();
+                        sports.setName(uName);
+                        sports.setType(uType);
+                        rDatabase.sportsDao().insertSport(sports);
+                        sportsList.clear();
+                        sportsList.addAll(rDatabase.sportsDao().getAllSports());
+                        adapter.notifyDataSetChanged();
+                    }
+                editText.setText("");
             }
         });
         return view;
-
-
-
-
-        /*View view = inflater.inflate(R.layout.fragment_insert_sport, container, false);
-        editText1 = view.findViewById(R.id.editTextTextPersonName);
-        rg = view.findViewById(R.id.radioGroup2);
-        btin = view.findViewById(R.id.button2);
-        btin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String Var_name = editText1.getText().toString();
-                int radioid = rg.getCheckedRadioButtonId();
-                View radiob = rg.findViewById(radioid);
-                int idx = rg.indexOfChild(radiob);
-                rb = (RadioButton) rg.getChildAt(idx);
-                String Var_type = rb.getText().toString();
-                try {
-                    Sports sports = new Sports();
-                    sports.setName(Var_name);
-                    sports.setType(Var_type);
-                }
-                catch (Exception e) {
-                    String message = e.getMessage();
-                    Toast.makeText(getActivity(),message,Toast.LENGTH_LONG).show();
-                }
-                editText1.setText("");
-            }
-        });
-        return view;*/
     }
 }
 

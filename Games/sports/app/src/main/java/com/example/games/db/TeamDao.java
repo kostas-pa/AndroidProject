@@ -12,29 +12,30 @@ import java.util.List;
 @Dao
 public interface TeamDao {
     @Query("SELECT * FROM Team")
-    List<Team> getAllTeams();
+    public List<Team> getAllTeams();
 
     @Query("SELECT * FROM Team WHERE Name = :tName")
-    List<Team> searchTeamByName(String tName);
+    public List<Team> searchTeamByName(String tName);
 
     @Query("SELECT * FROM Team WHERE Stadium_Name = :tStadiumName")
-    List<Team> searchTeamByStadiumName(String tStadiumName);
+    public List<Team> searchTeamByStadiumName(String tStadiumName);
+
 
     @Query("SELECT * FROM Team WHERE City = :tCity")
-    List<Team> searchTeamByCity(String tCity);
+    public List<Team> searchTeamByCity(String tCity);
 
     @Query("SELECT * FROM Team WHERE Country = :tCountry")
-    List<Team> searchTeamByCountry(String tCountry);
+    public List<Team> searchTeamByCountry(String tCountry);
 
     @Query("SELECT * FROM Team WHERE Creation_Year = :tCreationYear")
-    List<Team> searchTeamByCreationYear(String tCreationYear);
+    public List<Team> searchTeamByCreationYear(String tCreationYear);
 
-    @Update
-    void updateTeam(Team... team);
+    @Update(onConflict = OnConflictStrategy.REPLACE)
+    void updateTeam(Team team);
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insertTeam(Team... team);
+    void insertTeam(Team team);
 
     @Delete
-    void delete(Team... team);
+    void delete(Team team);
 }
