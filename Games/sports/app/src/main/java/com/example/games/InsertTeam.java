@@ -22,9 +22,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class InsertTeam extends Fragment {
-    //EditText editText1, editText2, editText3, editText4, editText5;
-    //Button btin;
-
 
     EditText tname, stdname, city, country, creyear , sname;
     Button btadd;
@@ -84,9 +81,9 @@ public class InsertTeam extends Fragment {
                 rDatabase.teamDao().insertTeam(team);
                 teamList.clear();
                 teamList.addAll(rDatabase.teamDao().getAllTeams());
-
                 adapter.notifyDataSetChanged();
 
+                sname.setText("");
                 tname.setText("");
                 stdname.setText("");
                 city.setText("");

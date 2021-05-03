@@ -15,7 +15,7 @@ public interface SportsDao {
     @Query("SELECT * FROM Sports")
     public List<Sports> getAllSports();
 
-    @Query("SELECT ID FROM Sports WHERE Name like :sName")
+    @Query("SELECT Sid FROM Sports WHERE Name like :sName")
     public List<Sports> searchSportByName(String sName);
 
     @Query("SELECT * FROM Sports WHERE Type = :sType")

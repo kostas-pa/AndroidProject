@@ -10,7 +10,7 @@ import java.io.Serializable;
 public class Sports implements Serializable {
 
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "ID")
+    @ColumnInfo(name = "Sid")
     private int sid;
     @ColumnInfo(name = "Name")
     private String name;
@@ -23,9 +23,9 @@ public class Sports implements Serializable {
     }
 
     public Sports (int sid, String name, String type) {
-        this.sid = sid;
-        this.name = name;
-        this.type = type;
+            this.sid = sid;
+            this.name = name;
+            this.type = type;
     }
 
     public int getSid() {
