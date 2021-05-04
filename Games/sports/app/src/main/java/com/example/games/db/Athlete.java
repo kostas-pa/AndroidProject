@@ -25,6 +25,20 @@ public class Athlete {
     private int BirthYear;
     private int Sid;
 
+    public Athlete() {
+
+    }
+
+    public Athlete(int Sid, int aid, String firstName, String lastName, String city, String country, int BirthYear) {
+        this.Sid = Sid;
+        this.aid = aid;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.city = city;
+        this.country = country;
+        this.BirthYear = BirthYear;
+
+    }
 
     public int getAid() {
         return aid;

@@ -8,26 +8,25 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.games.db.Athlete;
 import com.example.games.db.RDatabase;
 import com.example.games.db.Team;
 
 import java.util.List;
 
-public class TeamAdapter extends RecyclerView.Adapter<SportsAdapter.ViewHolder>{
+public class AthleteAdapter  extends RecyclerView.Adapter<SportsAdapter.ViewHolder> {
 
-    private List<Team> teamList;
+    private List<Athlete> athleteList;
     private Activity context;
     private RDatabase database;
 
-    public TeamAdapter(Activity context, List<Team> teamList) {
+    public AthleteAdapter(Activity context, List<Athlete> athleteList) {
         this.context = context;
-        this.teamList = teamList;
+        this.athleteList = athleteList;
         notifyDataSetChanged();
     }
 
@@ -42,25 +41,24 @@ public class TeamAdapter extends RecyclerView.Adapter<SportsAdapter.ViewHolder>{
     @Override
     public void onBindViewHolder(@NonNull SportsAdapter.ViewHolder holder, int position) {
 
-        Team team = teamList.get(position);
+        Athlete athlete = athleteList.get(position);
         database = RDatabase.getInstance(context);
-        holder.textView.setText(team.getSid());
-        holder.textView.append("," + team.getName());
-        holder.textView.append("," + team.getStadiumName());
-        holder.textView.append("," + team.getCity());
-        holder.textView.append("," + team.getCountry());
-        holder.textView.append("," + team.getCreationYear());
+        holder.textView.setText(athlete.getSid());
+        holder.textView.append("," + athlete.getFirstName());
+        holder.textView.append("," + athlete.getLastName());
+        holder.textView.append("," + athlete.getCity());
+        holder.textView.append("," + athlete.getCountry());
+        holder.textView.append("," + athlete.getBirthYear());
         holder.btedit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Team t = teamList.get(holder.getAdapterPosition());
-                int tID = t.getTid();
-                String Name = t.getName();
-                String stdName = t.getStadiumName();
-                String city = t.getCity();
-                String country = t.getCountry();
-                int creyear = t.getCreationYear();
-
+                Athlete a = athleteList.get(holder.getAdapterPosition());
+                int aid = a.getAid();
+                String fname = a.getFirstName();
+                String lname = a.getLastName();
+                String city = a.getCity();
+                String country = a.getCountry();
+                int byear = a.getBirthYear();
 
                 Dialog dialog = new Dialog(context);
                 dialog.setContentView(R.layout.dialog_update);
@@ -72,49 +70,47 @@ public class TeamAdapter extends RecyclerView.Adapter<SportsAdapter.ViewHolder>{
                 EditText editText = dialog.findViewById(R.id.edit_text);
                 Button btupdate = dialog.findViewById(R.id.bt_update);
 
-                editText.setText(Name);
-                editText.append("," + stdName);
+                editText.setText(fname);
+                editText.append("," + lname);
                 editText.append("," + city);
                 editText.append("," + country);
-                editText.append("," + creyear);
-
+                editText.append("," + byear);
                 btupdate.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         dialog.dismiss();
                         Object[] words = editText.getText().toString().trim().split(",");
                         int uSid = Integer.parseInt(words[0].toString());
-                        String uName = words[1].toString();
-                        String ustdName = words[2].toString();
+                        String ufname = words[1].toString();
+                        String ulname = words[2].toString();
                         String ucity = words[3].toString();
                         String ucountry = words[4].toString();
-                        int ucreyear = Integer.parseInt(words[5].toString());
-                        Team team1 = new Team(uSid, tID, uName, ustdName, ucity, ucountry, ucreyear);
-                        database.teamDao().updateTeam(team1);
-                        teamList.clear();
-                        teamList.addAll(database.teamDao().getAllTeams());
+                        int ubyear = Integer.parseInt(words[5].toString());
+                        Athlete athlete1 = new Athlete(uSid, aid, ufname, ulname, ucity, ucountry, ubyear);
+                        database.athleteDao().updateAthlete(athlete1);
+                        athleteList.clear();
+                        athleteList.addAll(database.athleteDao().getAllAthletes());
                         notifyDataSetChanged();
                     }
                 });
+
             }
         });
 
         holder.btdelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Team t = teamList.get(holder.getAdapterPosition());
-                database.teamDao().delete(t);
+                Athlete a = athleteList.get(holder.getAdapterPosition());
+                database.athleteDao().delete(a);
                 int position = holder.getAdapterPosition();
-                teamList.remove(position);
+                athleteList.remove(position);
                 notifyItemRemoved(position);
-                notifyItemRangeChanged(position, teamList.size());
+                notifyItemRangeChanged(position, athleteList.size());
             }
         });
     }
 
     @Override
-    public int getItemCount() {
-        return teamList.size();
-    }
+    public int getItemCount() { return athleteList.size(); }
 
 }
