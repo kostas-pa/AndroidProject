@@ -1,14 +1,16 @@
-package com.example.games.db;
+package com.example.games.local_db;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
+import java.io.Serializable;
+
 
 @Entity(foreignKeys = @ForeignKey(entity = Sports.class, parentColumns = "Sid", childColumns = "Sid",
        onDelete = ForeignKey.CASCADE))
-public class Athlete {
+public class Athlete implements Serializable {
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "ID")

@@ -15,8 +15,8 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.games.db.RDatabase;
-import com.example.games.db.Sports;
+import com.example.games.local_db.RDatabase;
+import com.example.games.local_db.Sports;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -62,7 +62,7 @@ public class InsertSport extends Fragment {
                 View radiob = rg.findViewById(radioid);
                 int idx = rg.indexOfChild(radiob);
                 rb = (RadioButton) rg.getChildAt(idx);
-                String uType = rb.getText().toString();
+                String uType = rb.getText().toString().trim();
 
                     if (!uName.equals("")) {
                         Sports sports = new Sports();

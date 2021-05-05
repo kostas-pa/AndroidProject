@@ -14,9 +14,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.games.db.RDatabase;
-import com.example.games.db.Sports;
-import com.example.games.db.Team;
+import com.example.games.local_db.RDatabase;
+import com.example.games.local_db.Sports;
 
 import java.util.List;
 
@@ -38,7 +37,6 @@ public class SportsAdapter extends RecyclerView.Adapter<SportsAdapter.ViewHolder
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_row_main, parent,
                 false);
         return new ViewHolder(view);

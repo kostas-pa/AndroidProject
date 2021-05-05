@@ -1,4 +1,4 @@
-package com.example.games.db;
+package com.example.games.local_db;
 
 import androidx.room.Dao;
 import androidx.room.Delete;
@@ -30,7 +30,7 @@ public interface AthleteDao {
     @Query("SELECT * FROM Athlete WHERE BirthYear = :aBirthYear")
     List<Athlete> searchAthleteByBirthYear(String aBirthYear);
 
-    @Update
+    @Update(onConflict = OnConflictStrategy.REPLACE)
     void updateAthlete(Athlete athlete);
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

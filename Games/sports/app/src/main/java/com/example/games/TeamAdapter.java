@@ -8,14 +8,12 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.games.db.RDatabase;
-import com.example.games.db.Team;
+import com.example.games.local_db.RDatabase;
+import com.example.games.local_db.Team;
 
 import java.util.List;
 
@@ -54,6 +52,7 @@ public class TeamAdapter extends RecyclerView.Adapter<SportsAdapter.ViewHolder>{
             @Override
             public void onClick(View v) {
                 Team t = teamList.get(holder.getAdapterPosition());
+                int sid = t.getSid();
                 int tID = t.getTid();
                 String Name = t.getName();
                 String stdName = t.getStadiumName();
@@ -72,7 +71,8 @@ public class TeamAdapter extends RecyclerView.Adapter<SportsAdapter.ViewHolder>{
                 EditText editText = dialog.findViewById(R.id.edit_text);
                 Button btupdate = dialog.findViewById(R.id.bt_update);
 
-                editText.setText(Name);
+                editText.setText(sid);
+                editText.append("," + Name);
                 editText.append("," + stdName);
                 editText.append("," + city);
                 editText.append("," + country);

@@ -1,4 +1,4 @@
-package com.example.games.db;
+package com.example.games.local_db;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;

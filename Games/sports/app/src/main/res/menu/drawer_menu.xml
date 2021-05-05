@@ -10,12 +10,6 @@
         <item android:id="@+id/nav_insert"
             android:icon="@drawable/ic_baseline_add_circle_24"
             android:title="Add" />
-        <item android:id="@+id/nav_update"
-            android:icon="@drawable/ic_baseline_update_24"
-            android:title="Update" />
-        <item android:id="@+id/nav_delete"
-            android:icon="@drawable/ic_baseline_delete_24"
-            android:title="Delete" />
     </group>
 
     <item android:title="Manage">

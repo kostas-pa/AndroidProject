@@ -8,7 +8,7 @@
 
     <TextView
         android:id="@+id/textView5"
-        android:layout_width="200dp"
+        android:layout_width="150dp"
         android:layout_height="50dp"
         android:text="Insert Team"
         android:textAlignment="center"
@@ -21,7 +21,7 @@
 
     <EditText
         android:id="@+id/editTextTextPersonName2"
-        android:layout_width="200dp"
+        android:layout_width="150dp"
         android:layout_height="50dp"
         android:ems="10"
         android:inputType="textPersonName"
@@ -34,7 +34,7 @@
 
     <EditText
         android:id="@+id/editTextTextPersonName3"
-        android:layout_width="200dp"
+        android:layout_width="150dp"
         android:layout_height="50dp"
         android:ems="10"
         android:inputType="textPersonName"
@@ -47,7 +47,7 @@
 
     <EditText
         android:id="@+id/editTextTextPersonName4"
-        android:layout_width="200dp"
+        android:layout_width="150dp"
         android:layout_height="50dp"
         android:ems="10"
         android:inputType="textPersonName"
@@ -59,7 +59,7 @@
 
     <EditText
         android:id="@+id/editTextTextPersonName5"
-        android:layout_width="200dp"
+        android:layout_width="150dp"
         android:layout_height="50dp"
         android:ems="10"
         android:inputType="textPersonName"
@@ -71,7 +71,7 @@
 
     <EditText
         android:id="@+id/editTextTextPersonName6"
-        android:layout_width="200dp"
+        android:layout_width="150dp"
         android:layout_height="50dp"
         android:ems="10"
         android:inputType="textPersonName"

@@ -1,4 +1,4 @@
-package com.example.games.db;
+package com.example.games.local_db;
 
 import androidx.room.Dao;
 import androidx.room.Delete;
@@ -21,7 +21,7 @@ public interface SportsDao {
     @Query("SELECT * FROM Sports WHERE Type = :sType")
     public List<Sports> searchSportByType(String sType);
 
-    @Update
+    @Update(onConflict = OnConflictStrategy.REPLACE)
     void updateSport(Sports sport);
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

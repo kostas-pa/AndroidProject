@@ -1,15 +1,10 @@
-package com.example.games.db;
+package com.example.games.local_db;
 
-import android.app.Activity;
 import android.content.Context;
 
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
-
-import com.example.games.InsertSport;
-
-import java.util.Objects;
 
 @Database(entities = {Sports.class, Team.class, Athlete.class}, version = 2, exportSchema = false)
 public abstract class RDatabase extends RoomDatabase {

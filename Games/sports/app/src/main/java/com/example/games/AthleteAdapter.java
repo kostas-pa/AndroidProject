@@ -12,9 +12,8 @@ import android.widget.EditText;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.games.db.Athlete;
-import com.example.games.db.RDatabase;
-import com.example.games.db.Team;
+import com.example.games.local_db.Athlete;
+import com.example.games.local_db.RDatabase;
 
 import java.util.List;
 
@@ -53,6 +52,7 @@ public class AthleteAdapter  extends RecyclerView.Adapter<SportsAdapter.ViewHold
             @Override
             public void onClick(View v) {
                 Athlete a = athleteList.get(holder.getAdapterPosition());
+                int sid = a.getSid();
                 int aid = a.getAid();
                 String fname = a.getFirstName();
                 String lname = a.getLastName();
@@ -70,11 +70,13 @@ public class AthleteAdapter  extends RecyclerView.Adapter<SportsAdapter.ViewHold
                 EditText editText = dialog.findViewById(R.id.edit_text);
                 Button btupdate = dialog.findViewById(R.id.bt_update);
 
-                editText.setText(fname);
+                editText.setText(sid);
+                editText.append("," + fname);
                 editText.append("," + lname);
                 editText.append("," + city);
                 editText.append("," + country);
                 editText.append("," + byear);
+
                 btupdate.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
