@@ -1,7 +1,9 @@
 package com.example.games;
 
+import java.util.Date;
+
 public class GameHelper {
-    String id, Sport, Date, City, Country;
+    String id, Sport, City, Country, Date;
 
     public GameHelper() {
     }

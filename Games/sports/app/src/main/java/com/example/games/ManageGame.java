@@ -29,12 +29,11 @@ public class ManageGame extends Fragment {
     HelperAdapter helperAdapter;
     DatabaseReference databaseReference;
 
-    TextView game_id, game_sport, game_date;
+    TextView game_id;
     ImageView edit_game, delete_game;
 
 
-    FirebaseDatabase rootNode;
-    DatabaseReference referenceGame;
+    FirebaseDatabase firebaseDatabase;
     DatabaseReference referenceParticipant;
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -44,6 +43,9 @@ public class ManageGame extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         gameHelper = new ArrayList<>();
         databaseReference = FirebaseDatabase.getInstance().getReference("Game");
+
+        edit_game = view.findViewById(R.id.bt_edit_game);
+        delete_game = view.findViewById(R.id.bt_delete_game);
 
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -62,6 +64,17 @@ public class ManageGame extends Fragment {
             }
         });
 
+        /*delete_game.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                firebaseDatabase = FirebaseDatabase.getInstance();
+                databaseReference = firebaseDatabase.getReference("Game");
+
+                String gameId = view.findViewById(R.id.text_game_id).toString();
+
+                databaseReference.child(gameId).removeValue();
+            }
+        }); */
 
         return view;
     }
